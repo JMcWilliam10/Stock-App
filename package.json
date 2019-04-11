@@ -1,0 +1,24 @@
+{
+  "name": "javascriptproject2.0",
+  "version": "1.0.0",
+  "description": "Stock App",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "not yet"
+  },
+  "keywords": [
+    "stock",
+    "app",
+    "second",
+    "project"
+  ],
+  "author": "Jonathan McWilliam",
+  "license": "ISC",
+  "dependencies": {
+    "newsapi": "^2.4.0"
+  }
+}
