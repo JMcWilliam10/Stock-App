@@ -248,14 +248,15 @@ app.myChart = (splicedDateAndTime, price) => new Chart(ctx, {
                 ticks: {
                     fontColor: "white",
                     fontSize: 15,
-                    beginAtZero: false
-                }
+                    beginAtZero: false,
+                    precision: 0.01
+                },
             }],
             xAxes: [{
                 ticks: {
                     fontColor: "white",
                     fontSize: 10,
-                    maxTicksLimit: 10
+                    maxTicksLimit: 10,
                 }
             }]
         }
