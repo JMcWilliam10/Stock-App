@@ -83,6 +83,7 @@ form{
     color: white;
     background: black;
     transition: 0.3s ease-in;
+    padding: 3px;
 }
 .submit:hover{
     background: rgb(133, 133, 133);
