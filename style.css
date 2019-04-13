@@ -133,7 +133,11 @@ footer{
         margin: 0;
     }
     .searchComponent{
+        width: 98%;
         margin: 0 auto;
+    }
+    header{
+        width:350px;
     }
   }
 
@@ -147,6 +151,10 @@ footer{
         margin: 0;
     }
     .searchComponent{
+        width: 98%;
         margin: 0 auto;
+    }
+    header{
+        width:300px;
     }
   }
