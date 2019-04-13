@@ -42,6 +42,7 @@ img{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-top: 10px;
     margin-bottom: 100px;
 }
 .plusIcon{
@@ -67,7 +68,7 @@ li{
     justify-content: space-between;
 }
 li:hover{
-    background: rgb(133, 133, 133);
+    background: #22595D;
 }
 li:nth-of-type(2n +1){
     background: rgba(235, 228, 228, 0.055);
@@ -89,12 +90,12 @@ form{
 }
 .submit{
     color: white;
-    background: black;
+    background: #22595D;
     transition: 0.3s ease-in;
     padding: 3px;
 }
 .submit:hover{
-    background: rgb(133, 133, 133);
+    background: black;
 }
 .search{
     font-size: 20px;
