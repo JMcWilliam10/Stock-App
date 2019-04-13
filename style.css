@@ -58,7 +58,6 @@ span{
 ul{
     list-style: none;
     padding-left: 0;
-    border: 1px solid black;
     margin: 0;
 }
 li{
@@ -75,10 +74,12 @@ li:nth-of-type(2n +1){
 li:nth-of-type(2n +1):hover{
     background: rgb(133, 133, 133);
 }
-form{
-    display: flex;
+.searchComponent{
     width: 500px;
     margin: 0 auto;
+}
+form{
+    display: flex;
 }
 .flexItem{
     flex: 1;
