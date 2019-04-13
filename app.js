@@ -37,7 +37,6 @@ app.secondCall = (stock) => {
             return parseInt(result['Time Series (30min)'][value]['4. close'])
         });
         app.myChart(splicedDateAndTime, mappedPrice);  
-        ctx.style.backgroundColor = 'rgba(255, 255, 255, 0.779)';
     });
 }
 // Create eventlistener
@@ -229,14 +228,32 @@ app.myChart = (splicedDateAndTime, price) => new Chart(ctx, {
                 'rgba(54, 162, 235, 1)'
 
             ],
-            borderWidth: 3
+            borderWidth: 1
         }]
     },
     options: {
+        legend: {
+            labels: {
+                fontColor: "white",
+                fontSize: 15
+            }
+        },
         scales: {
             yAxes: [{
+                gridLines: {
+                    color: "#FFFFFF"
+                  },
                 ticks: {
+                    fontColor: "white",
+                    fontSize: 15,
                     beginAtZero: false
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontColor: "white",
+                    fontSize: 10,
+                    maxTicksLimit: 10
                 }
             }]
         }

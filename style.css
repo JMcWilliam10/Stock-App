@@ -94,7 +94,6 @@ form{
     
 }
 .myChart{
-    background: rgba(255, 255, 255, 0.801);
     min-height: 600px;
     height: 600px;
 }
@@ -124,6 +123,17 @@ footer{
     .wrapper{
         width: 500px;
         max-width: 500px;
+        margin: 0;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .flexCard{
+        width: 100%;
+    }
+    .wrapper{
+        width: 400px;
+        max-width: 400px;
         margin: 0;
     }
   }
