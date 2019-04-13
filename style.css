@@ -12,6 +12,10 @@ body{
 div{
   
 }
+header{
+    width:400px;
+    margin: 0 auto;
+}
 a{
     color: black;
     text-decoration: none;
@@ -73,6 +77,8 @@ li:nth-of-type(2n +1):hover{
 }
 form{
     display: flex;
+    width: 500px;
+    margin: 0 auto;
 }
 .flexItem{
     flex: 1;
@@ -115,8 +121,6 @@ footer{
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-}
-.stockAndGraphComponent{
 }
 @media only screen and (max-width: 600px) {
     .flexCard{
