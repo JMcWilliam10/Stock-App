@@ -48,6 +48,7 @@ section{
     flex-wrap: wrap;
 }
 span{
+    color: white;
     padding: 0 10px;
 }
 ul{
