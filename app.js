@@ -82,7 +82,7 @@ app.displayNews = (newsList) => {
         console.log(newsItem.urlToImage)
         if(newsItem.urlToImage != null){
             const newsHTML = `
-            <a class="flexCard" href=https://www.google.com>
+            <a class="flexCard" href=${newsItem.url}>
             <div>
                 <img src=${newsItem.urlToImage}>  
                 <h2>${newsItem.title}</h2>
