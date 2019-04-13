@@ -5,21 +5,38 @@ body{
 
 }
 .wrapper{
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-.flex{
-    display: flex;
+    width: 1000px;
+    max-width: 1000px;
+    margin: 0;
 }
 div{
-    width: 25%;
+  
 }
 a{
     color: black;
     text-decoration: none;
 }
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+h2{
+    font-size: 20px;
+    color: white;
+}
 img{
+    width: 100%;
+    max-width: 100%;
+    
+}
+.flexCard{
+    width: calc(100%/3)
+}
+.flexWrap{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.plusIcon{
     width: 15px;
     margin: 3px;
 }
@@ -77,3 +94,27 @@ form{
     min-height: 600px;
     height: 600px;
 }
+footer{
+    text-align: center;
+}
+/* aside{
+    width: 250px;
+    min-width: 250px;
+    margin-left: 50px;
+    align-self: center;
+    justify-self: center;
+
+} */
+.flexSpaceBetween{
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.stockAndGraphComponent{
+}
+@media only screen and (max-width: 600px) {
+    .flexCard{
+        width: 100%;
+    }
+  }
