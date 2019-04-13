@@ -132,6 +132,9 @@ footer{
         max-width: 500px;
         margin: 0;
     }
+    .searchComponent{
+        margin: 0 auto;
+    }
   }
 
   @media only screen and (max-width: 400px) {
@@ -142,5 +145,8 @@ footer{
         width: 400px;
         max-width: 400px;
         margin: 0;
+    }
+    .searchComponent{
+        margin: 0 auto;
     }
   }
