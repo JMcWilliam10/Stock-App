@@ -42,6 +42,7 @@ img{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-bottom: 100px;
 }
 .plusIcon{
     width: 15px;
@@ -123,6 +124,13 @@ footer{
     align-items: flex-start;
     flex-wrap: wrap;
 }
+.logoSpin{
+    animation: spin 6s linear infinite;
+    width: 100px;
+    margin: 0 auto;
+}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 @media only screen and (max-width: 600px) {
     .flexCard{
         width: 100%;
