@@ -28,6 +28,9 @@ img{
     max-width: 100%;
     
 }
+.ticker{
+    color: rgb(255, 255, 255)
+}
 .flexCard{
     width: calc(100%/3)
 }
@@ -91,6 +94,7 @@ form{
     
 }
 .myChart{
+    background: rgba(255, 255, 255, 0.801);
     min-height: 600px;
     height: 600px;
 }

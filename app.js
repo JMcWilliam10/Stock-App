@@ -37,6 +37,7 @@ app.secondCall = (stock) => {
             return parseInt(result['Time Series (30min)'][value]['4. close'])
         });
         app.myChart(splicedDateAndTime, mappedPrice);  
+        ctx.style.backgroundColor = 'rgba(255, 255, 255, 0.779)';
     });
 }
 // Create eventlistener
