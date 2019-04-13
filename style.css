@@ -117,4 +117,9 @@ footer{
     .flexCard{
         width: 100%;
     }
+    .wrapper{
+        width: 500px;
+        max-width: 500px;
+        margin: 0;
+    }
   }
