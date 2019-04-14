@@ -1,8 +1,9 @@
-// import env from './env.js';
 const app = {};
 
-let dateAndTime = [];
-app.key = '5Z8WIM18J4EFOBQS';
+// let dateAndTime = [];
+app.keyAlphaVantage = '5Z8WIM18J4EFOBQS';
+app.keyNewsApi = 'ccdad157151647f9a27caa79bcbb7c42';
+
 // Pull stocks from API
 app.getStocks = (placeHolderQuery) => {
     $.ajax({
@@ -10,7 +11,7 @@ app.getStocks = (placeHolderQuery) => {
         method: 'GET',
         dataType: 'json',
         data: {
-            apikey: app.key,
+            apikey: app.keyAlphaVantage,
             function: "SYMBOL_SEARCH",
             keywords: placeHolderQuery
         }
@@ -25,7 +26,7 @@ app.secondCall = (stock) => {
         method: 'GET',
         dataType: 'json',
         data: {
-            apikey: app.key,
+            apikey: app.keyAlphaVantage,
             function: "TIME_SERIES_INTRADAY",
             interval: '30min',
             symbol: stock,
@@ -33,7 +34,8 @@ app.secondCall = (stock) => {
         }
     }).then((result) => {
         dateAndTime = Object.keys(result['Time Series (30min)'])
-        splicedDateAndTime = dateAndTime.splice(0, 75).reverse()
+        // Spliced time is based on a 5 day trading period of 30 minute intervals x 13 intervals a day x 5
+        splicedDateAndTime = dateAndTime.splice(0, 65).reverse()
         let mappedPrice = splicedDateAndTime.map((value) => {
             return parseInt(result['Time Series (30min)'][value]['4. close'])
         });
@@ -65,7 +67,7 @@ app.getNews = (newsQuery) => {
         method: 'GET',
         dataType: 'json',
         data: {
-            apikey: 'ccdad157151647f9a27caa79bcbb7c42',
+            apikey: app.keyNewsApi,
             q: newsQuery,
             sources: 'bloomberg, the-washington-post, business-insider, financial-post, financial-times'
         }
@@ -109,7 +111,7 @@ $(function () {
     app.init();
 });
 
-// Chart JS
+// Start of Chart
 var ctx = document.getElementById('myChart');
 app.myChart = (splicedDateAndTime, price) => new Chart(ctx, {
     type: 'line',
@@ -120,116 +122,6 @@ app.myChart = (splicedDateAndTime, price) => new Chart(ctx, {
             data: price,
             backgroundColor: [
                 'rgba(8, 197, 33, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 206, 86, 0.2)',
-                // 'rgba(75, 192, 192, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 206, 86, 0.2)',
-                // 'rgba(75, 192, 192, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(153, 102, 255, 0.2)',
-                // 'rgba(255, 159, 64, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)',
-                // 'rgba(255, 99, 132, 0.2)',
-                // 'rgba(54, 162, 235, 0.2)'
-            ],
-            borderColor: [
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',               
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',                
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',               
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',               
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)',
-                // 'rgba(255, 206, 86, 1)',
-                // 'rgba(75, 192, 192, 1)',
-                // 'rgba(153, 102, 255, 1)',
-                // 'rgba(255, 159, 64, 1)',
-                // 'rgba(255, 99, 132, 1)',
-                // 'rgba(54, 162, 235, 1)'
-
             ],
             borderWidth: 2
         }]
@@ -264,4 +156,4 @@ app.myChart = (splicedDateAndTime, price) => new Chart(ctx, {
     }
 });
 
-// End of Chart JS
+// End of Chart
