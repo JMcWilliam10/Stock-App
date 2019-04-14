@@ -1,116 +1,145 @@
-body{
+body {
     font-family: sans-serif;
     text-align: center;
-    background: linear-gradient(to right, #182848, #4b6cb7); 
+    background: linear-gradient(to right, #182848, #4b6cb7);
 
 }
-.wrapper{
+
+.wrapper {
     width: 1000px;
     max-width: 1000px;
     margin: 0;
 }
-div{
-  
-}
-header{
-    width:400px;
+
+div {}
+
+header {
+    width: 400px;
     margin: 0 auto;
 }
-a{
+
+a {
     color: black;
     text-decoration: none;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
-h2{
+
+h2 {
     font-size: 20px;
     color: white;
 }
-img{
+
+img {
     width: 100%;
     max-width: 100%;
-    
+
 }
-.ticker{
+
+.ticker {
     color: rgb(255, 255, 255)
 }
-.flexCard{
+
+.flexCard {
     width: calc(100%/3)
 }
-.flexWrap{
+
+.flexWrap {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 10px;
     margin-bottom: 100px;
 }
-.plusIcon{
+
+.plusIcon {
     width: 15px;
     margin: 3px;
 }
-section{
+
+section {
     display: flex;
     flex-wrap: wrap;
 }
-span{
+
+span {
     color: white;
     padding: 0 10px;
 }
-ul{
+
+ul {
     list-style: none;
     padding-left: 0;
     margin: 0;
 }
-li{
+
+li {
     padding: 10px 5px;
     display: flex;
     justify-content: space-between;
 }
-li:hover{
+
+li:hover {
     background: #22595D;
 }
-li:nth-of-type(2n +1){
+
+li:nth-of-type(2n +1) {
     background: rgba(235, 228, 228, 0.055);
 }
-li:nth-of-type(2n +1):hover{
+
+li:nth-of-type(2n +1):hover {
     background: rgb(133, 133, 133);
 }
-.searchComponent{
+
+.searchComponent {
     width: 500px;
     margin: 0 auto;
 }
-form{
+
+form {
     display: flex;
 }
-.flexItem{
+
+.flexItem {
     flex: 1;
     padding: 10px 0;
     font-size: 20px;
 }
-.submit{
+
+.submit {
     color: white;
-    background: #22595D;
+    background: black;
     transition: 0.3s ease-in;
     padding: 3px;
 }
-.submit:hover{
-    background: black;
+
+.submit:hover {
+    background:#22595D;
 }
-.search{
+
+.search {
     font-size: 20px;
     text-align: center;
 }
-.plusIcon:hover{
-    
-}
-.myChart{
+
+.plusIcon:hover {}
+
+.myChart {
     min-height: 600px;
     height: 600px;
 }
-footer{
+
+footer {
     text-align: center;
 }
+
 /* aside{
     width: 250px;
     min-width: 250px;
@@ -119,51 +148,64 @@ footer{
     justify-self: center;
 
 } */
-.flexSpaceBetween{
-    display: flex; 
+.flexSpaceBetween {
+    display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
 }
-.logoSpin{
+
+.logoSpin {
     animation: spin 6s linear infinite;
     width: 100px;
     margin: 0 auto;
 }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 @media only screen and (max-width: 600px) {
-    .flexCard{
+    .flexCard {
         width: 100%;
     }
-    .wrapper{
+
+    .wrapper {
         width: 500px;
         max-width: 500px;
         margin: 0;
     }
-    .searchComponent{
+
+    .searchComponent {
         width: 98%;
         margin: 0 auto;
     }
-    header{
-        width:350px;
-    }
-  }
 
-  @media only screen and (max-width: 400px) {
-    .flexCard{
+    header {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .flexCard {
         width: 100%;
     }
-    .wrapper{
+
+    .wrapper {
         width: 400px;
         max-width: 400px;
         margin: 0;
     }
-    .searchComponent{
+
+    .searchComponent {
         width: 98%;
         margin: 0 auto;
     }
-    header{
-        width:300px;
+
+    header {
+        width: 300px;
     }
-  }
+}
