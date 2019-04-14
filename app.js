@@ -41,7 +41,7 @@ app.secondCall = (stock) => {
     });
 }
 // Create eventlistener
-test = function (ticker) {
+app.queryTicker = function (ticker) {
     // console.log(ticker)
     $('.ticker').empty();
     app.secondCall(ticker)
@@ -54,7 +54,7 @@ app.displayStocks = (stockList) => {
     $('ul').empty();
     stockList.forEach((stock) => {
         const stockHTML = `
-                            <li onclick="test('${stock['1. symbol']}')" ><span>${stock['2. name']}</span><span> ${stock['1. symbol']}<img class="plusIcon"src="plus-circle-solid.svg"></span></li>
+                            <li onclick="app.queryTicker('${stock['1. symbol']}')" ><span>${stock['2. name']}</span><span> ${stock['1. symbol']}<img class="plusIcon"src="plus-circle-solid.svg"></span></li>
                             `
         $('ul').append(stockHTML)
     });
