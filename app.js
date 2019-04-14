@@ -1,3 +1,4 @@
+// import env from './env.js';
 const app = {};
 
 let dateAndTime = [];
@@ -66,7 +67,7 @@ app.getNews = (newsQuery) => {
         data: {
             apikey: 'ccdad157151647f9a27caa79bcbb7c42',
             q: newsQuery,
-            sources: 'bloomberg, business-insider'
+            sources: 'bloomberg, the-washington-post, business-insider, financial-post, financial-times'
         }
     }).then((result) => {
         console.log(result)
