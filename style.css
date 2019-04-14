@@ -1,10 +1,13 @@
+
 body {
     font-family: sans-serif;
     text-align: center;
-    background: linear-gradient(to right, #182848, #4b6cb7);
+
 
 }
-
+.background{
+    background: linear-gradient(to right, #182848, #4b6cb7);
+}
 .wrapper {
     width: 1000px;
     max-width: 1000px;
