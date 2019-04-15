@@ -56,7 +56,7 @@ app.displayStocks = stockList => {
         `
         <li onclick="app.queryTicker('${stock["1. symbol"]}')">
         <span>${stock["2. name"]}</span>
-        <span>${stock["1. symbol"]}<img class="plusIcon"src="plus-circle-solid.svg"></span>
+        <span>${stock["1. symbol"]}<img class="plusIcon"src="images/plus-circle-solid.svg"></span>
         </li>
         `;
     $("ul").append(stockHTML);
