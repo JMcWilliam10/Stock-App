@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Stock App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -28,9 +29,13 @@
                 placeholder="Company Name"
                 name="search a term"
                 id="search"
-                class="search flexItem"
+                class="search flexItem item1"
               />
-              <input type="submit" value="Submit" class="submit flexItem" />
+              <button type="submit" value="Submit" class="submit flexItem item2" >
+                <i class="fas fa-search"></i>
+              </button>
+
+              <!-- <input  /> -->
             </form>
             <ul></ul>
           </div>
@@ -46,6 +51,7 @@
         </p>
         <p>(Bloomberg, Business Insider, Financial-Post, Financial Times & The Washington Post)</p>
         <p>Graph Component Library Provided by Chart.js</p>
+        <p>Icons provided by <a href="https://fontawesome.com/license">Font Awesome</a></p>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>

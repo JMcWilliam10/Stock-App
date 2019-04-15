@@ -20,7 +20,9 @@ header {
     width: 400px;
     margin: 0 auto;
 }
-
+p a{
+    color: rgb(155, 180, 248);
+}
 a {
     color: black;
     text-decoration: none;
@@ -117,6 +119,12 @@ form {
     flex: 1;
     padding: 10px 0;
     font-size: 20px;
+}
+.item1{
+    flex: 3;
+}
+.item2{
+    flex: 1;
 }
 
 .submit {
