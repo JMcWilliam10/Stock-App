@@ -36,9 +36,16 @@ app.secondCall = stock => {
     // Spliced time is based on a 5 day trading period of 30 minute intervals x 13 intervals a day x 5 trading days
     splicedDateAndTime = dateAndTime.splice(0, 65).reverse();
     let mappedPrice = splicedDateAndTime.map(value => {
-      return parseInt(result["Time Series (30min)"][value]["4. close"]);
+      return parseFloat(result["Time Series (30min)"][value]["4. close"]);
     });
-    app.myChart(splicedDateAndTime, mappedPrice);
+    if (mappedPrice[0] > mappedPrice[mappedPrice.length -1]){
+      chartColor = '#A00F11'
+  } else{
+    chartColor = '#22595D'
+  }
+  console.log(chartColor)
+  
+    app.myChart(splicedDateAndTime, mappedPrice, chartColor);
   });
 };
 // Create eventlistener
@@ -113,7 +120,7 @@ $(function() {
 });
 // Start of Chart
 var ctx = document.getElementById("myChart");
-app.myChart = (splicedDateAndTime, price) =>
+app.myChart = (splicedDateAndTime, price, chartColor) =>
   new Chart(ctx, {
     type: "line",
     data: {
@@ -122,7 +129,8 @@ app.myChart = (splicedDateAndTime, price) =>
         {
           label: "5 Day Price Chart",
           data: price,
-          backgroundColor: ["rgba(8, 197, 33, 0.2)"],
+          // backgroundColor: ["rgba(8, 197, 33, 0.2)"],
+          backgroundColor: [chartColor],
           borderWidth: 2
         }
       ]
