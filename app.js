@@ -38,13 +38,12 @@ app.secondCall = stock => {
     let mappedPrice = splicedDateAndTime.map(value => {
       return parseFloat(result["Time Series (30min)"][value]["4. close"]);
     });
-    if (mappedPrice[0] > mappedPrice[mappedPrice.length -1]){
-      chartColor = '#A00F11'
-  } else{
-    chartColor = '#22595D'
-  }
-  console.log(chartColor)
-  
+    if (mappedPrice[0] > mappedPrice[mappedPrice.length - 1]) {
+      chartColor = "#A00F11";
+    } else {
+      chartColor = "#22595D";
+    }
+    console.log(chartColor);
     app.myChart(splicedDateAndTime, mappedPrice, chartColor);
   });
 };
@@ -59,11 +58,12 @@ app.queryTicker = function(ticker) {
 app.displayStocks = stockList => {
   $("ul").empty();
   stockList.forEach(stock => {
-    const stockHTML =       
-        `
+    const stockHTML = `
         <li onclick="app.queryTicker('${stock["1. symbol"]}')">
         <span>${stock["2. name"]}</span>
-        <span>${stock["1. symbol"]}<img class="plusIcon"src="images/plus-circle-solid.svg"></span>
+        <span>${
+          stock["1. symbol"]
+        }<img class="plusIcon"src="images/plus-circle-solid.svg"></span>
         </li>
         `;
     $("ul").append(stockHTML);
@@ -92,8 +92,7 @@ app.displayNews = newsList => {
     console.log(newsItem);
     console.log(newsItem.urlToImage);
     if (newsItem.urlToImage != null) {
-      const newsHTML = 
-            `
+      const newsHTML = `
             <a class="flexCard" href=${newsItem.url}>
             <div>
                 <img src=${newsItem.urlToImage}>  
